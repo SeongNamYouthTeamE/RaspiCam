@@ -1,4 +1,4 @@
-"""WebServer URL Configuration
+"""restfulapi URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/2.2/topics/http/urls/
@@ -15,7 +15,12 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from django.conf.urls import url, include
+from rest_framework import routers, serializers, viewsets
+from images import views as imageviews
 
 urlpatterns = [
+    path('api-auth/', include('rest_framework.urls')),
+    path('images/', imageviews.image_send),
     path('admin/', admin.site.urls),
 ]
