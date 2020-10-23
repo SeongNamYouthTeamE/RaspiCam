@@ -10,3 +10,8 @@ A Project with raspberry pi camera, web and iOS
 - 포트포워딩 통해서 외부접속 확인 완료
 
 # 20201023
+- images 앱 생성
+- model 생성
+- serializer 생성
+- views에 이미지 수신하는 함수 생성
+- url에 맵핑
