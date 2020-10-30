@@ -141,5 +141,22 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
+STATICFILES_FINDERS = (
+    'django.contrib.staticfiles.finders.FileSystemFinder',
+    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+)
 
 STATIC_URL = '/static/'
+
+STATICFILES_DIRS = [
+    # os.path.join(BASE_DIR, 'images', 'static'),
+    # 'webui/static',
+    # BASE_DIR / "static",
+    # '/var/www/static/',
+    os.path.join(BASE_DIR, 'images', 'static'),
+]
+
+# 루트 static 디렉터
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+# STATIC_ROOT = join(PROJECT_ROOT, 'static/')
+# STATIC_ROOT = "/var/www/example.com/static/"

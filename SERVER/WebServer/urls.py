@@ -18,9 +18,15 @@ from django.urls import path
 from django.conf.urls import url, include
 from rest_framework import routers, serializers, viewsets
 from images import views as imageviews
+from django.views.static import serve
+from . settings import STATIC_ROOT
+from django.contrib.staticfiles.urls import staticfiles_urlpatterns
+from django.conf.urls.static import static
+from django.conf import settings
 
 urlpatterns = [
     path('api-auth/', include('rest_framework.urls')),
     path('images/', imageviews.image_send),
     path('admin/', admin.site.urls),
-]
+    path('', imageviews.init),
+] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

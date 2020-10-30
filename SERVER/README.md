@@ -15,3 +15,10 @@ A Project with raspberry pi camera, web and iOS
 - serializer 생성
 - views에 이미지 수신하는 함수 생성
 - url에 맵핑
+
+# 20201031
+- images에 html 파일을 넣을 templates 폴더 생성(index.html 생성 후 static 렌더링 설정)
+- images에 css, js, images 등 리소스를 넣을 static 폴더 생성(추후 유환님이 넣을 수 있게)
+- settings.py 에 static 관련 사전 설정
+- url에 맵핑
+- SERVER라는 상위폴더 생성후 서버 관련 파일 전체 이동

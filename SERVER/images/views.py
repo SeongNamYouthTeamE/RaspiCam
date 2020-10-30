@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django.template import Context, loader
 from django.http import HttpResponse, JsonResponse
 from django.views.decorators.csrf import csrf_exempt
 from rest_framework.parsers import JSONParser
@@ -8,9 +9,14 @@ from . serializers import ImageSerializer
 from PIL import Image
 
 # Create your views here.
-data = '<html><body><h1>리턴입니다.</h1></body></html>'
 
 num = 1
+
+
+@csrf_exempt
+def init(request):
+    template = loader.get_template("index.html")
+    return HttpResponse(template.render())
 
 
 @csrf_exempt
@@ -23,7 +29,7 @@ def image_send(request):
         return JsonResponse(serializer.data, safe=False)
 
     elif request.method == 'POST':
-        img_model = Images()
+        # img_model = Images()
         try:
             # 여기서 file을 튜플 형태로 client가 보낸 그대로 받아옮.
             file = request.FILES.popitem()
