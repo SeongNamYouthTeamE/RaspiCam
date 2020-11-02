@@ -7,6 +7,7 @@ from rest_framework.response import Response
 from . models import Images
 from . serializers import ImageSerializer
 from PIL import Image
+from os import path
 
 # Create your views here.
 
@@ -36,8 +37,8 @@ def image_send(request):
             file = file[1][0]
             binary_file = file.file
             img = Image.open(binary_file)
-            img.save(
-                '/root/programming/RaspiCam/upload_images/test{}.jpg'.format(num), 'JPEG')
+            filePath = path.abspath("./images/static/images/thumbs") + "/test{}.jpg"
+            img.save(filePath.format(num), 'JPEG')
 
             # serializer = ImageSerializer(data={'image': img, 'created':'2020-01-01'})
             # if serializer.is_valid():
