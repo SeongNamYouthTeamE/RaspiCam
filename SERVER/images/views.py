@@ -37,7 +37,7 @@ def image_send(request):
             binary_file = file.file
             img = Image.open(binary_file)
             img.save(
-                '/root/programming/RaspiCam/upload_images/test{}.jpg'.format(num), 'JPEG')
+                '/root/programming/RaspiCam/SERVER/upload_images/test{}.jpg'.format(num), 'JPEG')
 
             # serializer = ImageSerializer(data={'image': img, 'created':'2020-01-01'})
             # if serializer.is_valid():
