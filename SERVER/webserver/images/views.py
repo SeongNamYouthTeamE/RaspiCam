@@ -7,10 +7,11 @@ from rest_framework.response import Response
 from .models import Images
 from .serializers import ImageSerializer
 from PIL import Image
+from os import path
+
+import datetime
 
 # Create your views here.
-
-num = 1
 
 
 @csrf_exempt
@@ -21,7 +22,6 @@ def init(request):
 
 @csrf_exempt
 def image_send(request):
-    global num
     if request.method == "GET":
         queryset = Images.objects.all()
         serializer = ImageSerializer(queryset, many=True)
@@ -36,10 +36,10 @@ def image_send(request):
             file = file[1][0]
             binary_file = file.file
             img = Image.open(binary_file)
+            # filePath = path.abspath("../webserver/upload_images") + "/test{}.jpg"
+            num = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
             img.save(
-                "/root/programming/RaspiCam/SERVER/upload_images/test{}.jpg".format(
-                    num
-                ),
+                "../webserver/upload_images/test{}.jpg".format(num),
                 "JPEG",
             )
 
