@@ -42,45 +42,18 @@
 
             <!-- Gallery -->
             <section id="galleries">
-
                 <!-- Photo Galleries -->
                 <div class="gallery">
                     <header class="special">
                         <h2>What's New</h2>
                     </header>
                     <div class="content">
+                        {% for image in images %}
                         <div class="media">
-                            <a href="images/fulls/01.jpg"><img src="{% static 'images/thumbs/01.jpg' %}" alt=""
+                            <a href="images/fulls/01.jpg"><img src="{% static image.caption %}" alt=""
                                     title="This right here is a caption." /></a>
                         </div>
-                        <div class="media">
-                            <a href="images/fulls/05.jpg"><img src="{% static 'images/thumbs/05.jpg' %}" alt=""
-                                    title="This right here is a caption." /></a>
-                        </div>
-                        <div class="media">
-                            <a href="images/fulls/09.jpg"><img src="{% static 'images/thumbs/09.jpg' %}" alt=""
-                                    title="This right here is a caption." /></a>
-                        </div>
-                        <div class="media">
-                            <a href="images/fulls/02.jpg"><img src="{% static 'images/thumbs/02.jpg' %}" alt=""
-                                    title="This right here is a caption." /></a>
-                        </div>
-                        <div class="media">
-                            <a href="images/fulls/06.jpg"><img src="{% static 'images/thumbs/06.jpg' %}" alt=""
-                                    title="This right here is a caption." /></a>
-                        </div>
-                        <div class="media">
-                            <a href="images/fulls/10.jpg"><img src="{% static 'images/thumbs/10.jpg' %}" alt=""
-                                    title="This right here is a caption." /></a>
-                        </div>
-                        <div class="media">
-                            <a href="images/fulls/03.jpg"><img src="{% static 'images/thumbs/03.jpg' %}" alt=""
-                                    title="This right here is a caption." /></a>
-                        </div>
-                        <div class="media">
-                            <a href="images/fulls/07.jpg"><img src="{% static 'images/thumbs/07.jpg' %}" alt=""
-                                    title="This right here is a caption." /></a>
-                        </div>
+                        {% endfor %}
                     </div>
                     <footer>
                         <a href="gallery.html" class="button big">Full Gallery</a>
