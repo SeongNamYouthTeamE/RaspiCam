@@ -36,3 +36,12 @@ A Project with raspberry pi camera, web and iOS
 - https://pkgs.alpinelinux.org/packages 공식 문서에서 패키지 검색하며 찾음
 - docker image를 rebuild 하는 법을 몰라서 docker rmi -f 로 이미지 삭제 후 진행 반복..
 - 성공
+
+# 20201113 ~ 20201115
+- djongo 설치 후 mongodb와 연동
+- mongodb에 데이터가 잘 적재되는지 확인(mongodb compass 활용)
+- 실제 이미지 자체는 특정 폴더에 저장하며 db에는 'caption: 해당 이미지 경로', 'created: 생성 시간' 2개의 컬럼 저장
+- index.html과 해당 데이터를 렌더링 하여 출력
+- static, media 경로 등에 대해 제대로 숙지가 안되어 우선적으로 static > media 폴더 생성 후 이미지를 해당 경로로 저장
+- index.html에서 출력시 해당 caption을 slicing하여 {% static image.caption %} 과 같은 식으로 출력함
+- 성공
