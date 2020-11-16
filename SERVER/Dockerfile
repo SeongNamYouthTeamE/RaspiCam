@@ -7,7 +7,7 @@ COPY ./requirements.txt /requirements.txt
 RUN apk add --update --no-cache --virtual .tmp gcc libc-dev linux-headers jpeg-dev libjpeg-turbo
 RUN apk add build-base python3-dev zlib-dev
 RUN pip install --upgrade pip
-RUN pip install -r /requirements.txt
+RUN pip install --no-cache-dir -r /requirements.txt
 RUN apk add libjpeg
 RUN apk del .tmp
 
