@@ -61,3 +61,13 @@ A Project with raspberry pi camera, web and iOS
 - mkdir -p ./mongo/home/mongodb 
 - docker-compose.yml 수정(volumes: - ./mongo/home/mongodb:/home/mongodb 추가)
 - 성공
+
+# 20201117
+- 서버로 git pull
+- 서버에 docker, docker-compose 설치
+- docker-compose up 진행 중 에러 발생 -> "ERROR: Version in "./docker-compose.yml" is unsupported"
+- https://github.com/bigbluebutton/greenlight/issues/228 참고
+- $ sudo apt-get remove docker-compose
+- $ sudo curl -L "https://github.com/docker/compose/releases/download/1.23.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+- $ sudo chmod +x /usr/local/bin/docker-compose
+- $ sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
