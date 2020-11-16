@@ -1,7 +1,7 @@
 import numpy as np
 import cv2
 import time
-from os import path
+import os
 from picamera import PiCamera
 import threading
 
@@ -49,7 +49,8 @@ class Camera():
                 res_show = cv2.applyColorMap(res_show, cv2.COLORMAP_JET)
 
                 self.capturedImg= res_show
-                # cv2.imwrite('frame.jpg', res_show)
+                # cv2.imwrite('origin.jpg', frame)
+                cv2.imwrite('frame.jpg', res_show)
                 # cv2.imshow('hitmap', res_show)
 
         except Exception as e:
@@ -71,8 +72,11 @@ class Camera():
 
     def captureFrame(self):
         curTime = time.strftime('%Y%m%d_%H%M%S', time.localtime(time.time()))
-        filePath = path.abspath("./images") + "/"+ curTime + ".jpg"
+        filePath = os.path.abspath("./images") + "/"+ curTime + ".jpg"
         if not self.capturedImg is None:
-            cv2.imwrite(filePath, self.capturedImg)
-            return self.originImg, None
-        return self.originImg, filePath
+            files = os.listdir('.')
+            index = files.index('frame.jpg')
+            os.rename(files[index], filePath)
+            print("name is changed to", filePath)
+            return self.originImg, filePath
+        return self.originImg, None
