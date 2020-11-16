@@ -103,6 +103,13 @@ DATABASES = {
     "default": {
         "ENGINE": "djongo",
         "NAME": "raspicam",
+        "CLIENT": {
+            "host": "mongodb://mongodb:27017",
+            "username": "root",
+            "password": "mongoadmin",
+            "authSource": "admin",
+            "authMechanism": "SCRAM-SHA-1",
+        },
     }
 }
 
