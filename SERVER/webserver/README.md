@@ -71,3 +71,10 @@ A Project with raspberry pi camera, web and iOS
 - $ sudo curl -L "https://github.com/docker/compose/releases/download/1.23.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
 - $ sudo chmod +x /usr/local/bin/docker-compose
 - $ sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
+- mongo/home/mongodb 부분도 volume 처리가 안되는 것을 발견
+- chown -R 999:999 ./home/mongodb https://github.com/docker-library/mongo/issues/323 참고
+- git remote에 push할때 빈 폴더들(특히 static/media)이 같이 git으로 관리 안 된 것으로 확인
+- 해당 부분 폴더 안에 .gitkeep 파일을 만들어줌으로써 해결
+- aws에 ubuntu 18.04 서버 대여 후 테스트
+- 이미지 수신 및 DB 저장 확인
+- 성공
