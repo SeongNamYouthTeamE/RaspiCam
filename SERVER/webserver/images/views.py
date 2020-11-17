@@ -50,6 +50,7 @@ def image_send(request):
             # filePath = path.abspath("../webserver/upload_images") + "/test{}.jpg"
             num = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
             abspath = os.path.abspath("./images/static/media/test{}.jpg".format(num))
+            print(abspath)
             img.save(
                 abspath,
                 "JPEG",
