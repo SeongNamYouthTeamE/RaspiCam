@@ -78,3 +78,10 @@ A Project with raspberry pi camera, web and iOS
 - aws에 ubuntu 18.04 서버 대여 후 테스트
 - 이미지 수신 및 DB 저장 확인
 - 성공
+
+#20201118
+- 추가 html 파일 렌더링
+- url 맵핑: gallery.html -> galleries/, generic.html -> generics/
+- 하드코딩 url 맵핑시 문제점 발생 3개 html 파일 기준 예) http://127.0.0.1:8000/galleries/ 여기 위치에서 다른 거 클릭시 중복 돼서 galleries/generics/ 이렇게 요청 됨
+- https://wayhome25.github.io/django/2017/03/06/django-06-poll-project-08-url/ 참고하여 작성
+- static resource들 처리하여 렌더링 완료

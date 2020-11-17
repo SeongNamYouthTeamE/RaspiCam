@@ -25,8 +25,9 @@ from django.conf.urls.static import static
 from django.conf import settings
 
 urlpatterns = [
-    path("", imageviews.init),
-    path("api-auth/", include("rest_framework.urls")),
+    path("", imageviews.init, name="home"),
+    path("galleries/", imageviews.gallery, name="galleries"),
+    path("generics/", imageviews.generic, name="generics"),
     path("images/", imageviews.image_send),
     path("admin/", admin.site.urls),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

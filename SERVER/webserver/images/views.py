@@ -32,6 +32,28 @@ def init(request):
 
 
 @csrf_exempt
+def gallery(request):
+    template = loader.get_template("gallery.html")
+    queryset = Images.objects.all()
+    queryset = queryset.order_by("-created")[:8]
+    # index.html의 css가 이미지 8개 기준으로 작동하므로 데이터를 가져올때 최신 순으로 8개 가져온다.
+    for query in queryset:
+        query.caption = query.caption[-29:]
+        # /Users/Han/programming/restfulapi/images/static/media/{}.jpg 경로에서 media 부터 시작하기 위함으로 슬라이싱
+        # 서버에서는 디렉토리는 달라지겠지만 media가 -29번 부터 시작하는건 동일하기에 위와같이 슬라이싱
+    context = {
+        "images": queryset,
+    }
+    return HttpResponse(template.render(context, request))
+
+
+@csrf_exempt
+def generic(request):
+    template = loader.get_template("generic.html")
+    return HttpResponse(template.render())
+
+
+@csrf_exempt
 def image_send(request):
     if request.method == "GET":
         queryset = Images.objects.all()
@@ -50,14 +72,13 @@ def image_send(request):
             # filePath = path.abspath("../webserver/upload_images") + "/test{}.jpg"
             num = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
             abspath = os.path.abspath("./images/static/media/test{}.jpg".format(num))
-            print(abspath)
             img.save(
                 abspath,
                 "JPEG",
             )
             serializer = ImageSerializer(data={"caption": abspath, "created": ""})
             if serializer.is_valid():
-                print("db 저장 시작")
+                # db 저장 시작
                 serializer.save()
                 print("db 저장 성공")
             else:
