@@ -79,9 +79,18 @@ A Project with raspberry pi camera, web and iOS
 - 이미지 수신 및 DB 저장 확인
 - 성공
 
-#20201118
+# 20201118
 - 추가 html 파일 렌더링
 - url 맵핑: gallery.html -> galleries/, generic.html -> generics/
 - 하드코딩 url 맵핑시 문제점 발생 3개 html 파일 기준 예) http://127.0.0.1:8000/galleries/ 여기 위치에서 다른 거 클릭시 중복 돼서 galleries/generics/ 이렇게 요청 됨
 - https://wayhome25.github.io/django/2017/03/06/django-06-poll-project-08-url/ 참고하여 작성
 - static resource들 처리하여 렌더링 완료
+- image animation 부분 처리 방법: 현재까지 서버에 저장된 이미지를 한데 모아 gif 화 시킨 후 출력하기로 결정
+- 1. 새로운 이미지가 들어온다
+- 2. 기존 gif 이미지를 지운다
+- 3. 새로운 이미지와 기존 이미지를 합쳐서 gif 만든다
+- 4. 출력해준다
+- 테스트 파이썬 파일에서 테스트 완료
+
+# 20201119
+- Raspicam 본 서버에 작성 및 테스트 완료
