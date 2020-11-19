@@ -13,6 +13,9 @@ from PIL import Image
 
 import datetime
 import os
+import imageio
+
+file_path = "./images/static/media"
 
 
 @csrf_exempt
@@ -29,6 +32,28 @@ def init(request):
         "images": queryset,
     }
     return HttpResponse(template.render(context, request))
+
+
+@csrf_exempt
+def gallery(request):
+    template = loader.get_template("gallery.html")
+    queryset = Images.objects.all()
+    queryset = queryset.order_by("-created")[:20]
+    # index.html의 css가 이미지 10~20개 기준으로 작동하므로 데이터를 가져올때 최신 순으로 20개 가져온다.
+    for query in queryset:
+        query.caption = query.caption[-29:]
+        # /Users/Han/programming/restfulapi/images/static/media/{}.jpg 경로에서 media 부터 시작하기 위함으로 슬라이싱
+        # 서버에서는 디렉토리는 달라지겠지만 media가 -29번 부터 시작하는건 동일하기에 위와같이 슬라이싱
+    context = {
+        "images": queryset,
+    }
+    return HttpResponse(template.render(context, request))
+
+
+@csrf_exempt
+def generic(request):
+    template = loader.get_template("generic.html")
+    return HttpResponse(template.render())
 
 
 @csrf_exempt
@@ -56,12 +81,22 @@ def image_send(request):
             )
             serializer = ImageSerializer(data={"caption": abspath, "created": ""})
             if serializer.is_valid():
-                print("db 저장 시작")
+                # db 저장 시작
                 serializer.save()
-                print("db 저장 성공")
-            else:
-                print("db 저장 실패")
+                # db 저장 완료
+
+                file_names = os.listdir(file_path)
+                file_names.sort()
+                abspath = os.path.abspath("./images/static/media")
+                if "test.gif" in file_names:
+                    os.remove(abspath + "/test.gif")
+                    # 기존 gif 삭제
+                images = []
+                for i in file_names:
+                    if i != ".gitkeep" and i != "test.gif":
+                        images.append(imageio.imread(abspath + "/{}".format(i)))
+                imageio.mimsave(abspath + "/test.gif", images, duration=0.1)
+                # gif save
             return HttpResponse("file received")
         except:
-            print("No Post")
             return HttpResponse("No Post")

@@ -61,3 +61,36 @@ A Project with raspberry pi camera, web and iOS
 - mkdir -p ./mongo/home/mongodb 
 - docker-compose.yml 수정(volumes: - ./mongo/home/mongodb:/home/mongodb 추가)
 - 성공
+
+# 20201117
+- 서버로 git pull
+- 서버에 docker, docker-compose 설치
+- docker-compose up 진행 중 에러 발생 -> "ERROR: Version in "./docker-compose.yml" is unsupported"
+- https://github.com/bigbluebutton/greenlight/issues/228 참고
+- $ sudo apt-get remove docker-compose
+- $ sudo curl -L "https://github.com/docker/compose/releases/download/1.23.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+- $ sudo chmod +x /usr/local/bin/docker-compose
+- $ sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
+- mongo/home/mongodb 부분도 volume 처리가 안되는 것을 발견
+- chown -R 999:999 ./home/mongodb https://github.com/docker-library/mongo/issues/323 참고
+- git remote에 push할때 빈 폴더들(특히 static/media)이 같이 git으로 관리 안 된 것으로 확인
+- 해당 부분 폴더 안에 .gitkeep 파일을 만들어줌으로써 해결
+- aws에 ubuntu 18.04 서버 대여 후 테스트
+- 이미지 수신 및 DB 저장 확인
+- 성공
+
+# 20201118
+- 추가 html 파일 렌더링
+- url 맵핑: gallery.html -> galleries/, generic.html -> generics/
+- 하드코딩 url 맵핑시 문제점 발생 3개 html 파일 기준 예) http://127.0.0.1:8000/galleries/ 여기 위치에서 다른 거 클릭시 중복 돼서 galleries/generics/ 이렇게 요청 됨
+- https://wayhome25.github.io/django/2017/03/06/django-06-poll-project-08-url/ 참고하여 작성
+- static resource들 처리하여 렌더링 완료
+- image animation 부분 처리 방법: 현재까지 서버에 저장된 이미지를 한데 모아 gif 화 시킨 후 출력하기로 결정
+- 1. 새로운 이미지가 들어온다
+- 2. 기존 gif 이미지를 지운다
+- 3. 새로운 이미지와 기존 이미지를 합쳐서 gif 만든다
+- 4. 출력해준다
+- 테스트 파이썬 파일에서 테스트 완료
+
+# 20201119
+- Raspicam 본 서버에 작성 및 테스트 완료

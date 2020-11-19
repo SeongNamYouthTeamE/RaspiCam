@@ -1,0 +1,108 @@
+{% load static %}
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	<title>Team SSG</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<link rel="stylesheet" href="{% static 'css/main.css' %}" />
+</head>
+
+<body>
+	<div class="page-wrap">
+
+		<!-- Nav -->
+		<nav id="nav">
+			<ul>
+				<li><a href="{% url 'home' %}"><span class="icon fa-home"></span></a></li>
+				<li><a href="{% url 'galleries' %}"><span class="icon fa-camera-retro"></span></a></li>
+				<li><a href="{% url 'generics' %}" class="active"><span class="icon fa-file-text-o"></span></a></li>
+			</ul>
+		</nav>
+
+		<!-- Main -->
+		<section id="main">
+
+			<!-- Header -->
+			<header id="header">
+				<div>RaspiCam <span>by SSG</span></div>
+			</header>
+
+			<!-- Section -->
+			<section>
+				<div class="inner">
+					<header>
+						<h1>Why us?</h1>
+					</header>
+					<p>우리는 고객들과의 상생을 목표로 함으로서 돈만 바라보는것이 아닌, 장기적인 목표와 비전을 보고자 합니다.</p>
+					<p>단순히 큰 시장을 노리고 시작하는 것이 아닌, 당장 우리 주변에 있는 소상공인부터 시작하여 함께 성장해 보고자 합니다</p>
+
+					<h2>Our Product</h2>
+					<div class="column">
+						<img src="{% static 'images/Raspi.jpeg' %}" width="300px" ;height="200px;">
+						<img src="{% static 'images/Origin.png' %}" width="350px" ;height="400px;">
+						<img src="{% static 'images/Result.png' %}" width="300px" ;height="200px;">
+					</div><br>
+
+					<h2>People</h2>
+					<section class="columns double">
+						<div class="column">
+							<span class="image left special"><img src="{% static 'images/S_profile.jpeg' %}"
+									alt="신은지 소개" /></span>
+							<h3>"신은지"</h3>
+							<p>● SW 엔지니어<br>
+								● 전문 분야 : 임베디드 SW, 이미지 처리<br>
+								● 가천대학교 전자공학과 4학년</p>
+
+						</div>
+						<div class="column">
+							<span class="image left special"><img src="{% static 'images/H_profile.png' %}"
+									alt="한승욱 소개" /></span>
+							<h3>"한승욱"</h3>
+							<p>● 엔지니어<br>
+								● 전문 분야 : 웹서버, 도커, 데이터베이스<br>
+								● 한국산업기술대학교 컴퓨터공학과 3학년</p>
+						</div>
+
+						<div class="column">
+							<span class="image left special"><img src="{% static 'images/K_profile.jpeg' %}"
+									alt="강명진 소개" /></span>
+							<h3>"강명진"</h3>
+							<p>● SW 엔지니어<br>
+								● 전문 분야 : 임베디드 SW<br>
+								● 한국산업기술대학교 메카트로닉스공학과 4학년</p>
+						</div>
+						<div class="column">
+							<span class="image left special"><img src="{% static 'images/Y_profile.jpeg' %}"
+									alt="신유환 소개" /></span>
+							<h3>"신유환"</h3>
+							<p>● 경영전략<br>
+								● 전문 분야 : 비즈니스모델링, 시장 분석, 영업<br>
+								● 강남대학교 경영학과 3학년</p>
+						</div>
+					</section>
+			</section>
+
+
+
+			<!-- Footer -->
+			<footer id="footer">
+				<div class="copyright">
+					&copy; Untitled Design: SSG. Images: RaspiCam.
+				</div>
+			</footer>
+		</section>
+	</div>
+
+	<!-- Scripts -->
+	<script src="{% static 'js/jquery.min.js' %}"></script>
+	<script src="{% static 'js/jquery.poptrox.min.js' %}"></script>
+	<script src="{% static 'js/jquery.scrolly.min.js' %}"></script>
+	<script src="{% static 'js/skel.min.js' %}"></script>
+	<script src="{% static 'js/util.js' %}"></script>
+	<script src="{% static 'js/main.js' %}"></script>
+
+</body>
+
+</html>
