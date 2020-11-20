@@ -14,13 +14,16 @@ A Project with raspberry pi camera, web and iOS
 * 오프라인 매장의 정보(방문객 수, 관심영역) 제공
 * 해당 정보를 바탕으로 데이터 분석
 * 분석된 데이터를 통한 맞춤 마케팅 전략 제공
+* [Product IR Info](https://drive.google.com/file/d/1GeubgYQ3QoCGe-wTUG-GnJT9wlIFL9Jt/view?usp=sharing)  
+![Pi-Image](https://user-images.githubusercontent.com/48985445/99684708-1c7fe600-2ac5-11eb-98be-1dd26c42292c.png)  
 
 ### Examples
 ![originImg](https://user-images.githubusercontent.com/48985445/99693822-1ee73d80-2acf-11eb-921e-b7cdfd956a36.jpg)
  ![frame2](https://user-images.githubusercontent.com/48985445/99693724-06772300-2acf-11eb-88b4-0aee236fcbc1.jpg)  
   
- 영상 출처: [OpenCV 라이브러리 sample data](https://github.com/opencv/opencv/tree/master/samples/data)
-
+ 영상 출처: [OpenCV 라이브러리 sample data](https://github.com/opencv/opencv/tree/master/samples/data)  
+  
+[Watch it Video](https://drive.google.com/file/d/1Ckosq6h8VfoRphmH0IeZNX7DfRNN0MeB/view?usp=sharing)
 
 ### System Flow
 ![system_flow](https://user-images.githubusercontent.com/48985445/99683490-bfcffb80-2ac3-11eb-9548-31239a04af82.png)
