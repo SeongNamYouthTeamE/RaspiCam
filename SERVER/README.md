@@ -2,7 +2,7 @@
 
 ### OS
 * Amazon aws EC2 ubuntu 18.04
-Same as OS X
+* Same as OS X
 
 ### Software
 * Docker v19.03.6
@@ -27,7 +27,7 @@ you can choose the version(https://github.com/docker/compose/releases)
 4. $ docker-compose -version 
 
 ### Execution
-In the SERVER Directory
+* In the SERVER Directory
 ```
 $ docker-compose up
 ```
