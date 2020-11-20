@@ -10,6 +10,7 @@
 
 ### Installation
 #### Docker
+```
 1. $ sudo apt update -y
 2. $ sudo apt install -y apt-transport-https ca-certificates curl software-properties-common
 3. $ curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
@@ -19,12 +20,15 @@
 7. $ sudo systemctl start docker
 8. $ sudo systemctl status docker
 9. $ docker version
+```
 #### docker-compose
+```
 1. $ sudo curl -L "https://github.com/docker/compose/releases/download/1.24.1/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
 you can choose the version(https://github.com/docker/compose/releases)
 2. $ sudo chmod +x /usr/local/bin/docker-compose
 3. $ sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
 4. $ docker-compose -version 
+```
 
 ### Execution
 * In the SERVER Directory
