@@ -5,9 +5,9 @@ A Project with raspberry pi camera, web and iOS
 이름|역할|소개 페이지
 ---|---|---
 신은지|임베디드 SW, OpenCV를 활용한 이미지 처리|[개인 리포로 이동](https://github.com/devejs)
-한승욱|Django, Docker를 활용한 백엔드 서버 |
-강명진|임베디드 SW|
-신유환|비즈니스모델링, 시장 분석, 영업|
+한승욱|Django, Docker를 활용한 백엔드 서버 |[개인 리포로 이동](https://github.com/SeungWookHan)
+강명진|임베디드 SW|[개인 리포로 이동](https://github.com/MyungjinKang)
+신유환|비즈니스모델링, 시장 분석, 영업|[개인 리포로 이동](https://github.com/ShinYooHwan)
 
 ## Product
 **라즈베리파이를 이용한 AI 매장 분석 카메라**  
