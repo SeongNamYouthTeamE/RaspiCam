@@ -52,4 +52,4 @@ $ docker-compose up
   ```
   * https://github.com/docker-library/mongo/issues/323 
   
-* [Development Log](https://github.com/SeongNamYouthTeamE/RaspiCam/blob/main/SERVER/webserver/README.md) 
+### [Development Log](https://github.com/SeongNamYouthTeamE/RaspiCam/blob/main/SERVER/webserver/README.md) 
