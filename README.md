@@ -32,5 +32,5 @@ A Project with raspberry pi camera, web and iOS
 ![system_architecture](https://user-images.githubusercontent.com/48985445/99683557-d2e2cb80-2ac3-11eb-9b96-b87b9720c56d.png)
 
 ### Installation
-* [Server Installation]()
+* [Server Installation](https://github.com/SeongNamYouthTeamE/RaspiCam/blob/main/SERVER/README.md)
 * [RPi Installation](https://github.com/devejs/RaspiCam/blob/main/RPi/README.md)
