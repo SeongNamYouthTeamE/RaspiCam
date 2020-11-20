@@ -22,9 +22,9 @@
 9. $ docker version
 ```
 #### docker-compose
+* you can choose the version(https://github.com/docker/compose/releases)
 ```
 1. $ sudo curl -L "https://github.com/docker/compose/releases/download/1.24.1/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
-* you can choose the version(https://github.com/docker/compose/releases)
 2. $ sudo chmod +x /usr/local/bin/docker-compose
 3. $ sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
 4. $ docker-compose -version 
