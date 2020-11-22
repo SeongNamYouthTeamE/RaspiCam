@@ -1,4 +1,4 @@
-# DOCKER - WEBSERVER, DATABATE
+# DOCKER - WEBSERVER, DATABASE
 
 ### OS
 * Amazon aws EC2 ubuntu 18.04
